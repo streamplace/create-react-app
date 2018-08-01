@@ -144,6 +144,12 @@ module.exports = {
         ],
         include: paths.appSrc,
       },
+      // streamplace addition: add source-map-loader
+      {
+        test: /\.(js|jsx|mjs)$/,
+        enforce: "pre",
+        use: [require.resolve("source-map-loader")]
+      },
       {
         // "oneOf" will traverse all following loaders until one will
         // match the requirements. When no loader matches it will fall
